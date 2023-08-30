@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Car List</title>
+</head>
+<body>
+<h1>Car List</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+  </tr>
+
+  <tr th:each="car : ${cars}">
+    <td th:text="${car.id}"></td>
+    <td th:text="${car.name}"></td>
+    <td th:text="${car.dob}"></td>
+    <td>
+      <!-- Посилання на видалення машини -->
+      <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
+    </td>
+
+  </tr>
+</table>
+  <a href="/add">add</a>
+</body>
+</html>
