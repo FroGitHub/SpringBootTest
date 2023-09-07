@@ -11,15 +11,23 @@
     <th>ID</th>
     <th>Name</th>
     <th>DOB</th>
+    <th>img</th>
   </tr>
 
   <tr th:each="car : ${cars}">
     <td th:text="${car.id}"></td>
     <td th:text="${car.name}"></td>
     <td th:text="${car.dob}"></td>
+    <td><img th:src="@{${car.img}}" alt="Car Image" width="50" /></td>
     <td>
+      <a th:href="@{/det/{carId}(carId=${car.id})}">View Details</a>
+
+      <a th:href="@{/update/{carId}(carId=${car.id})}">Update</a>
       <!-- Посилання на видалення машини -->
       <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
+
+
+
     </td>
 
   </tr>

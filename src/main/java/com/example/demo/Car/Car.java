@@ -14,11 +14,14 @@ public class Car {
     private Long id;
     private String name;
     private LocalDate dob;
+    @Column(name = "img")
+    private String img;
 
-    public Car(Long id, String name, LocalDate dob) {
+    public Car(Long id, String name, LocalDate dob, String img) {
         this.id = id;
         this.name = name;
         this.dob = dob;
+        this.img = img;
     }
 
     public Car() {
@@ -48,6 +51,14 @@ public class Car {
         this.dob = dob;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -56,4 +67,6 @@ public class Car {
                 ", dob=" + dob +
                 '}';
     }
+
+
 }

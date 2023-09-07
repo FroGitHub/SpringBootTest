@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Details</title>
+</head>
+<body>
+<h1>Car Details</h1>
+<div th:if="${car}">
+    <h2 th:text="${car.name}"></h2>
+    <p th:text="${car.dob}"></p>
+    <img th:src="@{${car.img}}" alt="Car Image" width="50" />
+    <!-- Додайте інші поля для відображення інформації про автомобіль -->
+</div>
+<div th:unless="${car}">
+    <p>Car not found.</p>
+</div>
+<a href="/cars">Back to Cars</a>
+</body>
+</html>

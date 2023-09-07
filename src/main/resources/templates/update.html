@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Оновити авто</title>
+</head>
+  <body>
+  <h1>Оновити авто</h1>
+    <form method="post" th:action="@{'/update/' + ${car.id}}" enctype="multipart/form-data">
+
+
+      <label for="newName">Нова назва:</label>
+      <input type="text" id="newName" name="newName" required><br>
+
+      <label for="newPhoto">Нове фото:</label>
+      <input type="file" id="newPhoto" name="newPhoto"><br>
+
+      <button type="submit">Оновити</button>
+    </form>
+
+  </body>
+</html>
